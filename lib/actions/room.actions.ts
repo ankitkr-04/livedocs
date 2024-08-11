@@ -42,8 +42,10 @@ export const getDocument = async ({
 }) => {
   try {
     const room = await liveblocks.getRoom(roomId);
-    const hasAccess = Object.keys(room.usersAccesses).includes(userId);
-    if (!hasAccess) throw new Error("You don't have access to this document");
+    // const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+    // if (!hasAccess) throw new Error("You don't have access to this document");
+
+    
     return parseStringify(room);
   } catch (error) {
     console.error("Error fetching document", error);
